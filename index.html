@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LNL50BY5F6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LNL50BY5F6');
+  </script>
 
   <!-- ── Primary SEO ──────────────────────────────────────────────────────── -->
   <title>Canadian Duty Calculator — Estimate US Purchase Duty &amp; Tax at the Border</title>
@@ -866,51 +874,81 @@
     </div>
     <div class="modal-body">
 
-      <h3>1. Informational Purpose Only</h3>
-      <p>This tool is a <strong>free, non-commercial estimation aid</strong> provided solely for general informational and educational purposes. It is not, and must not be construed as, legal advice, tax advice, customs brokerage advice, or professional financial advice of any kind.</p>
+      <h3>1. Acceptance, Capacity &amp; Binding Agreement</h3>
+      <p>By checking the box below and clicking "Accept &amp; Continue," you (<strong>"User"</strong>) confirm that: (a) you are at least 18 years of age and have full legal capacity to enter into a binding agreement; (b) you have read, understood, and agree to be <strong>legally bound</strong> by every provision of these Terms of Use &amp; Disclaimer (<strong>"Terms"</strong>); and (c) you accept these Terms on behalf of yourself and any person for whom you are using this tool. If you do not agree, you must not use this calculator.</p>
 
-      <h3>2. No Warranty — Calculations May Be Incorrect</h3>
-      <p>All duty and tax figures produced by this calculator are <strong>estimates only</strong>. The operator expressly disclaims all warranties, express or implied, including without limitation any warranty of accuracy, completeness, fitness for a particular purpose, or merchantability. Actual duties, tariffs, and taxes assessed at the border are determined solely by the Canada Border Services Agency (CBSA) and may differ materially due to, without limitation:</p>
+      <h3>2. Informational Purpose Only — "AS IS" Provision</h3>
+      <p>This tool is provided <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> as a free, non-commercial estimation aid for general informational and educational purposes only. It is not, and must not be construed as, legal advice, tax advice, customs brokerage advice, accounting advice, or professional financial advice of any kind. No professional relationship of any nature is created by your use of this tool. This tool must <strong>not</strong> be used as the basis for any commercial, professional, or high-value financial decision, and you expressly acknowledge that you have been advised to seek qualified professional advice.</p>
+
+      <h3>3. No Warranty — Calculations Are Estimates Only</h3>
+      <p>All duty, tariff, and tax figures are <strong>approximations only</strong> and carry no guarantee of accuracy, completeness, currency, or fitness for any purpose. The operator <strong>expressly disclaims all warranties</strong>, express or implied, including without limitation: merchantability, fitness for a particular purpose, accuracy, and non-infringement. Actual duties and taxes assessed by the Canada Border Services Agency (CBSA) may differ materially — and potentially significantly — due to, without limitation:</p>
       <ul>
-        <li>Specific tariff classification under the <span class="statute">Customs Tariff, S.C. 1997, c. 36</span></li>
-        <li>Country of origin and applicable trade agreement treatment</li>
-        <li>Changes in duty rates, excise rates, or provincial tax rates after publication</li>
-        <li>CBSA officer discretion and valuation methodology under the <span class="statute">Customs Act, R.S.C. 1985, c. 1 (2nd Supp.)</span></li>
-        <li>Applicable excise duties under the <span class="statute">Excise Act, 2001, S.C. 2002, c. 22</span></li>
-        <li>GST/HST rules under the <span class="statute">Excise Tax Act, R.S.C. 1985, c. E-15</span></li>
-        <li>Provincial sales tax (PST/QST/RST) legislation of each province or territory</li>
-        <li>Currency exchange rates at the time of assessment</li>
+        <li>Specific tariff classification under the <span class="statute">Customs Tariff, S.C. 1997, c. 36</span> and associated schedules</li>
+        <li>Country of origin of goods and eligibility for preferential rates under the <em>Canada–United States–Mexico Agreement (CUSMA/USMCA)</em> or other trade treaties — this calculator applies MFN rates only and does <strong>not</strong> model trade-agreement preferential rates</li>
+        <li>CBSA valuation methodology and officer discretion under the <span class="statute">Customs Act, R.S.C. 1985, c. 1 (2nd Supp.)</span></li>
+        <li>Excise duties under the <span class="statute">Excise Act, 2001, S.C. 2002, c. 22</span></li>
+        <li>GST/HST under the <span class="statute">Excise Tax Act, R.S.C. 1985, c. E-15</span></li>
+        <li>Provincial/territorial sales tax legislation (PST, QST, RST) of each jurisdiction</li>
+        <li>Changes to duty rates, excise rates, or tax rates arising from federal Budgets, Orders in Council, or regulatory amendments occurring after the date the tool was last updated</li>
+        <li>Rapid or retroactive trade policy changes, including tariff surcharges, countermeasures, or special import measures enacted by the Government of Canada in response to international trade disputes</li>
+        <li>Currency exchange rates at the actual time of CBSA assessment, which may differ from rates displayed by this tool</li>
+        <li>Applicable CBSA D-Memoranda and administrative policies in force at the time of importation</li>
       </ul>
 
-      <h3>3. Limitation of Liability</h3>
-      <p>To the fullest extent permitted by applicable law, the operator of this tool, its contributors, and any associated parties <strong>shall not be liable</strong> for any direct, indirect, incidental, special, consequential, punitive, or exemplary damages arising out of or in connection with:</p>
+      <h3>4. Third-Party Data — No Responsibility for Exchange Rates</h3>
+      <p>This tool retrieves exchange rate data from the <strong>Frankfurter API</strong>, which is sourced from the European Central Bank (ECB). The operator has no control over, and makes no representation regarding, the accuracy, timeliness, or completeness of that third-party data. The CBSA uses its own exchange rate, published weekly pursuant to <span class="statute">Customs Act, s. 3</span>, which may differ from any rate displayed by this tool. The operator is not liable for any error, omission, or delay in third-party rate data or for any calculation error resulting therefrom.</p>
+
+      <h3>5. Assumption of Risk</h3>
+      <p>You expressly acknowledge and agree that: (a) your use of this tool and any reliance on its output is <strong>entirely at your own risk</strong>; (b) you have independently verified, or have had the opportunity to independently verify, any figure produced by this tool with a qualified customs broker or legal professional before acting on it; and (c) you fully and voluntarily assume all risk of loss, fines, penalties, seizure, inconvenience, or other harm arising from your use of or reliance on this tool.</p>
+
+      <h3>6. Limitation of Liability — Zero Aggregate Cap</h3>
+      <p>To the fullest extent permitted by applicable law, the operator, its contributors, officers, employees, agents, and assigns (collectively, <strong>"Released Parties"</strong>) <strong>shall have no liability whatsoever</strong>, and the User's sole remedy, if any, for dissatisfaction with this tool is to cease using it. Without limiting the foregoing, the Released Parties' <strong>maximum aggregate liability to the User for any claim</strong>, regardless of the form of action or legal theory (contract, tort including negligence, strict liability, statute, equity, or otherwise), <strong>shall not exceed zero dollars (CAD $0.00)</strong>. The Released Parties specifically disclaim all liability for:</p>
       <ul>
-        <li>Reliance on any estimate or output generated by this calculator;</li>
+        <li>Any direct, indirect, incidental, special, consequential, punitive, or exemplary damages;</li>
+        <li>Loss of revenue, profit, data, goodwill, or anticipated savings;</li>
+        <li>Reliance on any estimate, figure, or output generated by this calculator;</li>
         <li>Any under-declaration or over-declaration of goods at the border;</li>
-        <li>Any fines, penalties, seizures, or enforcement actions taken by CBSA or any other authority;</li>
-        <li>Any loss of goods, financial loss, or inconvenience resulting from use or misuse of this tool.</li>
+        <li>Any fine, penalty, seizure, forfeiture, detention, or enforcement action by CBSA or any government authority;</li>
+        <li>Any loss arising from inaccurate third-party exchange rate data;</li>
+        <li>Any loss arising from changes in tariff rates, trade policy, or legislation after the tool was published.</li>
       </ul>
-      <p>This limitation applies regardless of the legal theory asserted (contract, tort, strict liability, or otherwise) and even if the operator has been advised of the possibility of such damages.</p>
+      <p>This exclusion applies even if the Released Parties have been advised of the possibility of such damages and even if any limited remedy fails its essential purpose. <strong>No duty of care in negligence is owed by the Released Parties to the User or any third party</strong> in connection with this tool.</p>
+      <p><em>Note to Quebec residents:</em> Certain provisions of the <em>Civil Code of Québec</em>, CQLR c CCQ-1991, and the <em>Consumer Protection Act</em>, CQLR c P-40.1, may apply to limit the enforceability of certain exclusions above. Those clauses apply to the maximum extent permitted under Quebec law.</p>
 
-      <h3>4. Your Legal Obligation to Declare</h3>
-      <p>Under the <span class="statute">Customs Act, R.S.C. 1985, c. 1 (2nd Supp.), s. 12</span>, all persons returning to Canada are required by law to <strong>truthfully declare all goods</strong> in their possession to a CBSA officer. Failure to declare, or making a false or misleading declaration, may result in seizure of goods, administrative monetary penalties, and/or criminal prosecution. This tool does not substitute for your legal duty to declare.</p>
+      <h3>7. Indemnification</h3>
+      <p>You agree to <strong>indemnify, defend, and hold harmless</strong> the Released Parties from and against any and all claims, actions, proceedings, demands, losses, damages, costs, and expenses (including reasonable legal fees) brought by any third party arising out of or relating to: (a) your use or misuse of this tool; (b) your reliance on any output of this tool; (c) your violation of any applicable law, including the <span class="statute">Customs Act</span>; or (d) your breach of these Terms.</p>
 
-      <h3>5. No Advisory Relationship</h3>
-      <p>Use of this calculator does not create any professional, advisory, fiduciary, or solicitor-client relationship. For accurate duty classification and customs advice, consult a licensed <strong>customs broker</strong> accredited by the Canadian Society of Customs Brokers (CSCB) or a qualified legal or tax professional.</p>
+      <h3>8. Your Legal Obligation to Declare</h3>
+      <p>Under the <span class="statute">Customs Act, R.S.C. 1985, c. 1 (2nd Supp.), ss. 12–13</span>, all persons returning to Canada are required by law to <strong>truthfully declare all goods</strong> in their possession to a CBSA officer. Failure to declare, or making a false or misleading declaration, constitutes an offence and may result in: seizure and forfeiture of goods; administrative monetary penalties under the <span class="statute">Administrative Monetary Penalties Act, S.C. 1995, c. 41</span>; and/or criminal prosecution under the <span class="statute">Customs Act, s. 153</span>. This tool does not substitute for, and cannot satisfy, your legal duty to declare.</p>
 
-      <h3>6. Governing Law</h3>
-      <p>These terms are governed by the laws of the Province of Ontario and the federal laws of Canada applicable therein, without regard to conflict-of-law principles.</p>
+      <h3>9. No Professional Relationship — No Duty of Care</h3>
+      <p>Use of this calculator does not create any professional, advisory, fiduciary, solicitor-client, accountant-client, or customs-broker relationship, nor any duty of care of any kind, between you and the Released Parties. You are solely responsible for obtaining qualified, current, and jurisdiction-specific advice from a licensed customs broker accredited by the Canadian Society of Customs Brokers (CSCB), a lawyer, or a chartered accountant before making any declaration or financial decision based on this tool's output.</p>
 
-      <h3>7. Changes to This Tool</h3>
-      <p>Duty rates, tax rates, and exemption thresholds are subject to change by legislation or regulation at any time. The operator makes no commitment to update this tool following any legislative or regulatory change.</p>
+      <h3>10. Trade Policy Volatility</h3>
+      <p>Customs duty rates are subject to rapid and retroactive change by government action, including but not limited to: federal Budget measures; Orders in Council under the <span class="statute">Customs Tariff, s. 53</span>; special import measures under the <span class="statute">Special Import Measures Act, R.S.C. 1985, c. S-15</span>; retaliatory tariffs; and changes resulting from international trade disputes or renegotiation of trade agreements. This tool may not reflect current rates at the time of your border crossing. You bear sole responsibility for verifying the applicable rate on the date of your return to Canada.</p>
+
+      <h3>11. Availability &amp; Discontinuation</h3>
+      <p>This tool is provided without any guarantee of continued availability. The operator reserves the right to modify, suspend, or permanently discontinue the tool at any time, without notice and without liability. No claim for detrimental reliance on the continued availability of the tool shall be made against the Released Parties.</p>
+
+      <h3>12. Limitation Period</h3>
+      <p>Notwithstanding any limitation period otherwise applicable under the <span class="statute">Limitations Act, 2002, S.O. 2002, c. 24, Sched. B</span> or any other statute, any claim arising out of or in connection with these Terms or your use of this tool must be commenced within <strong>thirty (30) days</strong> of the date on which the cause of action arose. Any claim not commenced within this period is permanently time-barred.</p>
+
+      <h3>13. Governing Law &amp; Exclusive Jurisdiction</h3>
+      <p>These Terms are governed exclusively by the laws of the Province of Ontario and the federal laws of Canada applicable therein, without regard to conflict-of-law or choice-of-law principles. You irrevocably submit to the <strong>exclusive jurisdiction of the courts of the Province of Ontario</strong> sitting in the City of Toronto for the resolution of any dispute arising out of or in connection with these Terms or this tool, and waive any objection to venue or jurisdiction in any other forum.</p>
+
+      <h3>14. Severability</h3>
+      <p>If any provision of these Terms is found by a court of competent jurisdiction to be invalid, illegal, or unenforceable in any respect, that provision shall be modified to the minimum extent necessary to make it enforceable, or severed if modification is not possible, and the remaining provisions shall continue in full force and effect.</p>
+
+      <h3>15. Entire Agreement &amp; No Waiver</h3>
+      <p>These Terms constitute the entire agreement between you and the operator with respect to this tool and supersede all prior representations, understandings, and agreements. No failure or delay by the operator in exercising any right under these Terms shall constitute a waiver of that right. No waiver of any breach shall be deemed a waiver of any subsequent breach.</p>
 
     </div>
     <div class="modal-footer">
       <label class="agree-row">
         <input type="checkbox" id="tcCheckbox" onchange="onTcCheckbox()" />
-        <span>I have read and understood the Terms of Use and Disclaimer. I acknowledge that calculations are estimates only and that I bear sole responsibility for accurately declaring all goods to the CBSA.</span>
+        <span>I confirm I am 18 years of age or older, have read and understood all 15 sections of these Terms of Use &amp; Disclaimer, and <strong>agree to be legally bound</strong> by them. I accept that all calculations are estimates only, that no duty of care is owed to me, that my aggregate remedy is limited to CAD $0.00, and that I bear sole and exclusive responsibility for accurately declaring all goods to the CBSA.</span>
       </label>
-      <button class="btn-accept" id="tcAcceptBtn" onclick="acceptTerms()" disabled>Accept &amp; Continue →</button>
+      <button class="btn-accept" id="tcAcceptBtn" onclick="acceptTerms()" disabled>I Agree — Continue →</button>
     </div>
   </div>
 </div>
@@ -1121,7 +1159,7 @@
   <strong>Estimates only — not legal or customs advice.</strong>
   Always declare all goods truthfully to CBSA.
   <span class="sep">|</span>
-  <a href="https://www.cbsa-asfc.gc.ca/travel-voyage/itr-rji-eng.html" target="_blank">Official CBSA guidance</a>
+  <a href="https://www.cbsa-asfc.gc.ca/travel-voyage/declare-eng.html" target="_blank">Official CBSA guidance</a>
   <span class="sep">|</span>
   <a href="#" onclick="reopenTerms(); return false;">Terms of Use &amp; Disclaimer</a>
   <span class="sep">|</span>
