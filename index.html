@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── Primary SEO ──────────────────────────────────────────────────────── -->
+  <title>Canadian Duty Calculator — Estimate US Purchase Duty &amp; Tax at the Border</title>
+  <meta name="description" content="Free calculator for Canadians returning from the US. Estimate CBSA customs duty, GST, HST and PST on goods purchased in America. Covers all provinces, personal exemptions ($200/$800 CAD), alcohol, tobacco, clothing, electronics and more." />
+  <meta name="keywords" content="Canadian duty calculator, CBSA customs duty, returning to Canada from USA, personal exemption Canada, GST HST on US purchases, duty on goods from USA, Canadian border duty estimate, customs calculator Canada, US to Canada duty tax, Canadian traveller exemption" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Canadian Duty Calculator" />
+  <link rel="canonical" href="https://canadianduty.ca/" />
+
+  <!-- ── Open Graph (Google, Facebook, LinkedIn previews) ─────────────────── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://canadianduty.ca/" />
+  <meta property="og:title" content="Canadian Duty Calculator — Estimate US Purchase Duty &amp; Tax" />
+  <meta property="og:description" content="Returning to Canada from the US? Instantly estimate customs duty, GST/HST/PST on your purchases. Covers all provinces, personal exemptions, alcohol &amp; tobacco limits." />
+  <meta property="og:locale" content="en_CA" />
+  <meta property="og:site_name" content="Canadian Duty Calculator" />
+
+  <!-- ── Twitter / X Card ─────────────────────────────────────────────────── -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Canadian Duty Calculator — US Purchase Duty &amp; Tax Estimator" />
+  <meta name="twitter:description" content="Free tool for Canadians crossing back from the US. Calculate customs duty, GST, HST and PST on your purchases in seconds." />
+
+  <!-- ── JSON-LD Structured Data (Google Rich Results) ───────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Canadian Duty Calculator",
+    "url": "https://canadianduty.ca/",
+    "description": "Free online calculator for Canadians returning from the US to estimate customs duty, GST, HST and PST on goods purchased in America, based on CBSA personal exemption rules.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "browserRequirements": "Requires JavaScript",
+    "inLanguage": "en-CA",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "CAD"
+    },
+    "creator": {
+      "@type": "Organization",
+      "name": "Canadian Duty Calculator"
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "Canadian Customs Duty",
+      "description": "Duties and taxes assessed by the Canada Border Services Agency (CBSA) on goods imported by returning Canadian travellers from the United States."
+    }
+  }
+  </script>
+
+  <!-- ── FAQ Structured Data (Google FAQ rich result) ────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How much can I bring back from the US to Canada duty-free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you were away for less than 24 hours, there is no personal exemption. For trips of 24–48 hours, you get a $200 CAD exemption (no alcohol or tobacco). For trips of 48 hours or more, you get an $800 CAD exemption, which can include limited alcohol and tobacco."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the duty rate on clothing brought from the US to Canada?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Adult clothing and apparel imported into Canada from the US is subject to approximately 18% customs duty on the value above your personal exemption. Children's clothing is duty-free."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I pay GST or HST on goods I bring back from the USA?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. GST (5%) or HST (13–15% depending on your province) applies to the value of goods above your personal exemption, plus any customs duty assessed. Provincial sales tax (PST or QST) may also apply."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much alcohol can I bring back from the US to Canada?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you were away 48 hours or more, you may bring back duty-free: 1.14 litres of spirits (over 22% ABV), or 1.5 litres of wine or coolers, or 8.5 litres of beer (approximately 24 cans). Quantities over these limits are subject to customs duty and excise duty."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens if I don't declare goods at the Canadian border?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Under the Customs Act, R.S.C. 1985, c. 1 (2nd Supp.), all returning residents must declare all goods. Failure to declare can result in seizure of goods and administrative monetary penalties of up to $1,000 or more."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --red: #C8102E;
+      --red-mid: #b30d27;
+      --red-dark: #8b0a1e;
+      --red-light: #fdf0f2;
+      --red-border: #f5c6cc;
+      --white: #ffffff;
+      --bg: #f0f2f5;
+      --card: #ffffff;
+      --gray-50: #f8fafc;
+      --gray-100: #f1f4f8;
+      --gray-200: #e4e8ef;
+      --gray-300: #cdd3dc;
+      --gray-400: #97a3b4;
+      --gray-500: #6b7a8d;
+      --gray-600: #4a5568;
+      --gray-700: #2d3748;
+      --gray-800: #1a202c;
+      --green: #0d7a45;
+      --green-light: #e6f7ef;
+      --green-border: #9fdfbf;
+      --amber: #92650a;
+      --amber-light: #fef8e7;
+      --amber-border: #f5d87a;
+      --blue: #1a56b0;
+      --blue-light: #eef4ff;
+      --blue-border: #93bfef;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+      --shadow: 0 4px 12px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.05);
+      --shadow-lg: 0 16px 40px rgba(0,0,0,0.14), 0 4px 10px rgba(0,0,0,0.07);
+      --shadow-xl: 0 24px 60px rgba(0,0,0,0.20), 0 8px 20px rgba(0,0,0,0.10);
+      --radius-sm: 6px;
+      --radius: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--gray-800);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER ─────────────────────────────────────────────────────────────── */
+    header {
+      background: linear-gradient(135deg, #b30d27 0%, #C8102E 45%, #a00d22 100%);
+      color: white;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 10% 50%, rgba(255,255,255,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse at 90% 20%, rgba(255,255,255,0.05) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .header-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 36px 24px 32px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .header-icon {
+      font-size: 3rem;
+      line-height: 1;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.3));
+      flex-shrink: 0;
+    }
+    .header-text h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+    .header-text p {
+      margin-top: 6px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+    .header-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 10px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 999px;
+      padding: 3px 10px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .header-stripe {
+      height: 4px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.1) 100%);
+    }
+
+    /* ── LAYOUT ──────────────────────────────────────────────────────────────── */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 28px 16px 8px;
+      display: grid;
+      gap: 20px;
+    }
+
+    /* ── CARDS ───────────────────────────────────────────────────────────────── */
+    .card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+    .card-header {
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--gray-100);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--gray-700);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--gray-50);
+    }
+    .card-body { padding: 24px; }
+
+    /* Step badges */
+    .step-badge {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--red), var(--red-mid));
+      color: white;
+      font-size: 0.8rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 2px 6px rgba(200,16,46,0.35);
+    }
+    .card-header-title { flex: 1; font-size: 0.95rem; font-weight: 700; color: var(--gray-700); }
+    .card-header-icon {
+      font-size: 1.1rem;
+      opacity: 0.6;
+    }
+
+    /* ── DURATION SELECTOR ───────────────────────────────────────────────────── */
+    .duration-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 12px;
+    }
+    .duration-card {
+      border: 2px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+      background: white;
+    }
+    .duration-card:hover {
+      border-color: var(--red);
+      background: var(--red-light);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(200,16,46,0.12);
+    }
+    .duration-card.selected {
+      border-color: var(--red);
+      background: var(--red-light);
+      box-shadow: 0 0 0 3px rgba(200,16,46,0.12), var(--shadow-sm);
+    }
+    .duration-card.selected::after {
+      content: '✓';
+      position: absolute;
+      top: 10px; right: 12px;
+      width: 20px; height: 20px;
+      background: var(--red);
+      color: white;
+      border-radius: 50%;
+      font-size: 0.65rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .duration-card .dc-icon {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .duration-card .dc-label {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--gray-800);
+    }
+    .duration-card .dc-exemption {
+      margin-top: 5px;
+      font-size: 0.82rem;
+      color: var(--red);
+      font-weight: 700;
+    }
+    .duration-card .dc-note {
+      margin-top: 4px;
+      font-size: 0.75rem;
+      color: var(--gray-500);
+      line-height: 1.4;
+    }
+    .duration-card input[type=radio] {
+      position: absolute; opacity: 0; width: 0; height: 0;
+    }
+
+    /* ── FORM ELEMENTS ───────────────────────────────────────────────────────── */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
+
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--gray-600);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .form-group select, .form-group input[type=text],
+    .form-group input[type=number] {
+      padding: 10px 14px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-family: inherit;
+      color: var(--gray-800);
+      background: white;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      width: 100%;
+    }
+    .form-group select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7a8d' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 36px;
+    }
+    .form-group select:focus, .form-group input:focus {
+      outline: none;
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(200,16,46,0.1);
+    }
+    .hint {
+      font-size: 0.74rem;
+      color: var(--gray-400);
+      margin-top: 3px;
+      line-height: 1.4;
+    }
+
+    /* Province card visual */
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 600px) { .details-grid { grid-template-columns: 1fr; } }
+    .input-with-icon { position: relative; }
+    .input-with-icon .input-icon {
+      position: absolute;
+      left: 12px; top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.95rem;
+      pointer-events: none;
+    }
+    .form-group .input-with-icon input {
+      padding-left: 34px;
+    }
+
+    .btn-rate-refresh {
+      flex-shrink: 0;
+      width: 36px; height: 36px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      background: white;
+      color: var(--gray-500);
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.15s;
+      padding: 0;
+    }
+    .btn-rate-refresh:hover { border-color: var(--red); color: var(--red); background: var(--red-light); }
+    .btn-rate-refresh.spinning { animation: spin 0.8s linear infinite; cursor: default; color: var(--gray-400); }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── ADD ITEM FORM ───────────────────────────────────────────────────────── */
+    .add-item-panel {
+      background: var(--gray-50);
+      border: 1.5px dashed var(--gray-200);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .add-item-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1.4fr 140px 100px auto;
+      gap: 12px;
+      align-items: end;
+    }
+    @media (max-width: 760px) {
+      .add-item-grid { grid-template-columns: 1fr 1fr; }
+      .add-item-grid .btn-add { grid-column: 1 / -1; }
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      font-family: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.18s;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--red), var(--red-mid));
+      color: white;
+      box-shadow: 0 2px 8px rgba(200,16,46,0.3);
+    }
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--red-mid), var(--red-dark));
+      box-shadow: 0 4px 14px rgba(200,16,46,0.4);
+      transform: translateY(-1px);
+    }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-danger {
+      background: transparent;
+      color: var(--gray-400);
+      padding: 6px 10px;
+      font-size: 0.95rem;
+    }
+    .btn-danger:hover {
+      color: var(--red);
+      background: var(--red-light);
+      border-radius: var(--radius-sm);
+    }
+
+    /* ── ITEMS TABLE ─────────────────────────────────────────────────────────── */
+    .table-wrap {
+      margin-top: 20px;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      overflow: hidden;
+      overflow-x: auto;
+    }
+    .items-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+    }
+    .items-table th {
+      text-align: left;
+      padding: 10px 14px;
+      background: var(--gray-50);
+      color: var(--gray-500);
+      font-weight: 600;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .items-table td {
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--gray-100);
+      vertical-align: middle;
+    }
+    .items-table tbody tr:last-child td { border-bottom: none; }
+    .items-table tbody tr:hover td { background: #fafbfd; }
+    .item-desc { font-weight: 600; color: var(--gray-800); }
+    .item-cat { color: var(--gray-500); font-size: 0.82rem; }
+
+    .chip {
+      display: inline-block;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .chip-blue { background: var(--blue-light); color: var(--blue); border: 1px solid var(--blue-border); }
+    .chip-amber { background: var(--amber-light); color: var(--amber); border: 1px solid var(--amber-border); }
+    .chip-green { background: var(--green-light); color: var(--green); border: 1px solid var(--green-border); }
+
+    .empty-state {
+      text-align: center;
+      padding: 48px 24px;
+      color: var(--gray-400);
+    }
+    .empty-state .es-icon { font-size: 2.8rem; margin-bottom: 10px; }
+    .empty-state p { font-size: 0.875rem; line-height: 1.5; }
+
+    /* ── ALCOHOL / TOBACCO NOTICE ────────────────────────────────────────────── */
+    .special-notice {
+      margin-top: 14px;
+      padding: 14px 16px;
+      background: var(--amber-light);
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--amber-border);
+      font-size: 0.85rem;
+      line-height: 1.6;
+    }
+    .special-notice .sn-title {
+      font-weight: 700;
+      color: var(--amber);
+      margin-bottom: 6px;
+      font-size: 0.88rem;
+    }
+
+    /* ── RESULTS ─────────────────────────────────────────────────────────────── */
+    .results-hero {
+      background: linear-gradient(135deg, var(--red-light) 0%, #fff5f6 100%);
+      border: 1.5px solid var(--red-border);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .results-hero .rh-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--red);
+      opacity: 0.75;
+    }
+    .results-hero .rh-amount {
+      font-size: 3rem;
+      font-weight: 800;
+      color: var(--red-dark);
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin: 6px 0 4px;
+    }
+    .results-hero .rh-sub {
+      font-size: 0.83rem;
+      color: var(--gray-500);
+    }
+    .results-hero.no-duty {
+      background: linear-gradient(135deg, var(--green-light) 0%, #f0fdf6 100%);
+      border-color: var(--green-border);
+    }
+    .results-hero.no-duty .rh-label { color: var(--green); }
+    .results-hero.no-duty .rh-amount { color: var(--green); }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 600px) { .summary-grid { grid-template-columns: 1fr 1fr; } }
+
+    .summary-box {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+    }
+    .summary-box .sb-label {
+      font-size: 0.73rem;
+      color: var(--gray-500);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .summary-box .sb-value {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--gray-800);
+      margin-top: 4px;
+      letter-spacing: -0.01em;
+    }
+    .summary-box .sb-sub {
+      font-size: 0.73rem;
+      color: var(--gray-400);
+      margin-top: 2px;
+    }
+
+    /* Exemption progress bar */
+    .exemption-bar-wrap {
+      margin-bottom: 20px;
+      padding: 14px 16px;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+    }
+    .exemption-bar-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: var(--gray-500);
+      margin-bottom: 7px;
+    }
+    .exemption-bar-label strong { color: var(--gray-700); }
+    .exemption-bar-track {
+      height: 8px;
+      background: var(--gray-200);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .exemption-bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      transition: width 0.5s ease;
+    }
+    .bar-green { background: linear-gradient(90deg, #22c55e, #16a34a); }
+    .bar-amber { background: linear-gradient(90deg, #f59e0b, #d97706); }
+    .bar-red   { background: linear-gradient(90deg, var(--red), var(--red-dark)); }
+
+    /* Breakdown table */
+    .breakdown-section {
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+    .breakdown-section .bs-title {
+      padding: 10px 16px;
+      background: var(--gray-50);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .breakdown-table {
+      width: 100%;
+      font-size: 0.875rem;
+      border-collapse: collapse;
+    }
+    .breakdown-table td {
+      padding: 9px 16px;
+      border-bottom: 1px solid var(--gray-100);
+    }
+    .breakdown-table tr:last-child td { border-bottom: none; }
+    .breakdown-table td:last-child { text-align: right; font-weight: 600; }
+    .breakdown-table .bd-muted { color: var(--gray-500); font-size: 0.83rem; }
+    .breakdown-table .bd-credit td { color: var(--green); }
+    .breakdown-table .bd-total td {
+      font-weight: 800;
+      color: var(--red-dark);
+      font-size: 0.95rem;
+      background: var(--red-light);
+    }
+
+    /* Alerts */
+    .alert {
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      font-size: 0.85rem;
+      line-height: 1.5;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-top: 12px;
+      border-width: 1px;
+      border-style: solid;
+    }
+    .alert-green { background: var(--green-light); color: var(--green); border-color: var(--green-border); }
+    .alert-amber  { background: var(--amber-light); color: var(--amber); border-color: var(--amber-border); }
+    .alert-red   { background: var(--red-light);  color: var(--red-dark); border-color: var(--red-border); }
+    .alert-blue  { background: var(--blue-light);  color: var(--blue); border-color: var(--blue-border); }
+    .alert .al-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── FOOTER ──────────────────────────────────────────────────────────────── */
+    footer {
+      max-width: 960px;
+      margin: 8px auto 0;
+      padding: 16px 16px 36px;
+      font-size: 0.76rem;
+      color: var(--gray-400);
+      line-height: 1.7;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 4px 8px;
+    }
+    footer a { color: var(--red); text-decoration: none; font-weight: 500; }
+    footer a:hover { text-decoration: underline; }
+    footer .sep { color: var(--gray-300); }
+
+    /* ── T&C MODAL ───────────────────────────────────────────────────────────── */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15,20,30,0.7);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+    .modal-overlay.hidden { display: none; }
+    .modal {
+      background: white;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-xl);
+      width: 100%;
+      max-width: 680px;
+      max-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      animation: modalIn 0.22s ease;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: scale(0.97) translateY(8px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .modal-header {
+      padding: 22px 28px 18px;
+      border-bottom: 1px solid var(--gray-100);
+      flex-shrink: 0;
+      background: linear-gradient(135deg, #fff 60%, var(--red-light));
+    }
+    .modal-header h2 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--gray-800);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: -0.02em;
+    }
+    .modal-header p {
+      margin-top: 5px;
+      font-size: 0.82rem;
+      color: var(--gray-500);
+    }
+    .modal-body {
+      padding: 22px 28px;
+      overflow-y: auto;
+      flex: 1;
+      font-size: 0.85rem;
+      color: var(--gray-700);
+      line-height: 1.75;
+    }
+    .modal-body h3 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--red);
+      margin: 20px 0 7px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--red-border);
+    }
+    .modal-body h3:first-child { margin-top: 0; }
+    .modal-body p { margin-bottom: 9px; }
+    .modal-body ul { margin-left: 18px; margin-bottom: 9px; }
+    .modal-body ul li { margin-bottom: 5px; }
+    .statute {
+      display: inline-block;
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: 4px;
+      padding: 1px 7px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.78rem;
+      color: var(--gray-700);
+      white-space: nowrap;
+    }
+    .modal-footer {
+      padding: 18px 28px;
+      border-top: 1px solid var(--gray-100);
+      background: var(--gray-50);
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .agree-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.85rem;
+      color: var(--gray-700);
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    .agree-row input[type=checkbox] {
+      width: 17px; height: 17px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      accent-color: var(--red);
+      cursor: pointer;
+    }
+    .btn-accept {
+      background: var(--gray-200);
+      color: var(--gray-400);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 11px 28px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      font-weight: 700;
+      cursor: not-allowed;
+      transition: all 0.18s;
+      align-self: flex-end;
+    }
+    .btn-accept.ready {
+      background: linear-gradient(135deg, var(--red), var(--red-mid));
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(200,16,46,0.35);
+    }
+    .btn-accept.ready:hover {
+      background: linear-gradient(135deg, var(--red-mid), var(--red-dark));
+      box-shadow: 0 4px 16px rgba(200,16,46,0.45);
+      transform: translateY(-1px);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── T&C MODAL ───────────────────────────────────────────────────────────── -->
+<div class="modal-overlay" id="tcOverlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="tcTitle">
+    <div class="modal-header">
+      <h2 id="tcTitle">🍁 Terms of Use &amp; Disclaimer</h2>
+      <p>Please read carefully and accept before using this calculator.</p>
+    </div>
+    <div class="modal-body">
+
+      <h3>1. Informational Purpose Only</h3>
+      <p>This tool is a <strong>free, non-commercial estimation aid</strong> provided solely for general informational and educational purposes. It is not, and must not be construed as, legal advice, tax advice, customs brokerage advice, or professional financial advice of any kind.</p>
+
+      <h3>2. No Warranty — Calculations May Be Incorrect</h3>
+      <p>All duty and tax figures produced by this calculator are <strong>estimates only</strong>. The operator expressly disclaims all warranties, express or implied, including without limitation any warranty of accuracy, completeness, fitness for a particular purpose, or merchantability. Actual duties, tariffs, and taxes assessed at the border are determined solely by the Canada Border Services Agency (CBSA) and may differ materially due to, without limitation:</p>
+      <ul>
+        <li>Specific tariff classification under the <span class="statute">Customs Tariff, S.C. 1997, c. 36</span></li>
+        <li>Country of origin and applicable trade agreement treatment</li>
+        <li>Changes in duty rates, excise rates, or provincial tax rates after publication</li>
+        <li>CBSA officer discretion and valuation methodology under the <span class="statute">Customs Act, R.S.C. 1985, c. 1 (2nd Supp.)</span></li>
+        <li>Applicable excise duties under the <span class="statute">Excise Act, 2001, S.C. 2002, c. 22</span></li>
+        <li>GST/HST rules under the <span class="statute">Excise Tax Act, R.S.C. 1985, c. E-15</span></li>
+        <li>Provincial sales tax (PST/QST/RST) legislation of each province or territory</li>
+        <li>Currency exchange rates at the time of assessment</li>
+      </ul>
+
+      <h3>3. Limitation of Liability</h3>
+      <p>To the fullest extent permitted by applicable law, the operator of this tool, its contributors, and any associated parties <strong>shall not be liable</strong> for any direct, indirect, incidental, special, consequential, punitive, or exemplary damages arising out of or in connection with:</p>
+      <ul>
+        <li>Reliance on any estimate or output generated by this calculator;</li>
+        <li>Any under-declaration or over-declaration of goods at the border;</li>
+        <li>Any fines, penalties, seizures, or enforcement actions taken by CBSA or any other authority;</li>
+        <li>Any loss of goods, financial loss, or inconvenience resulting from use or misuse of this tool.</li>
+      </ul>
+      <p>This limitation applies regardless of the legal theory asserted (contract, tort, strict liability, or otherwise) and even if the operator has been advised of the possibility of such damages.</p>
+
+      <h3>4. Your Legal Obligation to Declare</h3>
+      <p>Under the <span class="statute">Customs Act, R.S.C. 1985, c. 1 (2nd Supp.), s. 12</span>, all persons returning to Canada are required by law to <strong>truthfully declare all goods</strong> in their possession to a CBSA officer. Failure to declare, or making a false or misleading declaration, may result in seizure of goods, administrative monetary penalties, and/or criminal prosecution. This tool does not substitute for your legal duty to declare.</p>
+
+      <h3>5. No Advisory Relationship</h3>
+      <p>Use of this calculator does not create any professional, advisory, fiduciary, or solicitor-client relationship. For accurate duty classification and customs advice, consult a licensed <strong>customs broker</strong> accredited by the Canadian Society of Customs Brokers (CSCB) or a qualified legal or tax professional.</p>
+
+      <h3>6. Governing Law</h3>
+      <p>These terms are governed by the laws of the Province of Ontario and the federal laws of Canada applicable therein, without regard to conflict-of-law principles.</p>
+
+      <h3>7. Changes to This Tool</h3>
+      <p>Duty rates, tax rates, and exemption thresholds are subject to change by legislation or regulation at any time. The operator makes no commitment to update this tool following any legislative or regulatory change.</p>
+
+    </div>
+    <div class="modal-footer">
+      <label class="agree-row">
+        <input type="checkbox" id="tcCheckbox" onchange="onTcCheckbox()" />
+        <span>I have read and understood the Terms of Use and Disclaimer. I acknowledge that calculations are estimates only and that I bear sole responsibility for accurately declaring all goods to the CBSA.</span>
+      </label>
+      <button class="btn-accept" id="tcAcceptBtn" onclick="acceptTerms()" disabled>Accept &amp; Continue →</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── HEADER ──────────────────────────────────────────────────────────────── -->
+<header>
+  <div class="header-inner">
+    <div class="header-icon">🍁</div>
+    <div class="header-text">
+      <h1>Canadian Duty Calculator</h1>
+      <p>Estimate customs duty &amp; taxes on goods purchased in the US<br>when returning to Canada</p>
+      <span class="header-badge">🛂 For travellers crossing the border</span>
+    </div>
+  </div>
+  <div class="header-stripe"></div>
+</header>
+
+<main id="main-content">
+<div class="container">
+
+  <!-- STEP 1: Trip Duration -->
+  <div class="card">
+    <div class="card-header">
+      <span class="step-badge">1</span>
+      <h2 class="card-header-title">How long were you in the United States?</h2>
+      <span class="card-header-icon">🗓️</span>
+    </div>
+    <div class="card-body">
+      <div class="duration-grid" id="durationGrid">
+        <label class="duration-card" data-hours="0" onclick="selectDuration(this)">
+          <input type="radio" name="duration" value="0" />
+          <span class="dc-icon">⏱️</span>
+          <div class="dc-label">Less than 24 hours</div>
+          <div class="dc-exemption">$0 CAD exemption</div>
+          <div class="dc-note">No personal exemption applies</div>
+        </label>
+        <label class="duration-card selected" data-hours="24" onclick="selectDuration(this)">
+          <input type="radio" name="duration" value="24" checked />
+          <span class="dc-icon">🌙</span>
+          <div class="dc-label">24 – 48 hours</div>
+          <div class="dc-exemption">$200 CAD exemption</div>
+          <div class="dc-note">No alcohol or tobacco included</div>
+        </label>
+        <label class="duration-card" data-hours="48" onclick="selectDuration(this)">
+          <input type="radio" name="duration" value="48" />
+          <span class="dc-icon">📅</span>
+          <div class="dc-label">48 hours – 6 days</div>
+          <div class="dc-exemption">$800 CAD exemption</div>
+          <div class="dc-note">Limited alcohol &amp; tobacco allowed</div>
+        </label>
+        <label class="duration-card" data-hours="168" onclick="selectDuration(this)">
+          <input type="radio" name="duration" value="168" />
+          <span class="dc-icon">✈️</span>
+          <div class="dc-label">7 days or more</div>
+          <div class="dc-exemption">$800 CAD exemption</div>
+          <div class="dc-note">Limited alcohol &amp; tobacco allowed</div>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2: Your Details -->
+  <div class="card">
+    <div class="card-header">
+      <span class="step-badge">2</span>
+      <h2 class="card-header-title">Your Province &amp; Exchange Rate</h2>
+      <span class="card-header-icon">🏠</span>
+    </div>
+    <div class="card-body">
+      <div class="details-grid">
+        <div class="form-group">
+          <label for="province">Home Province / Territory</label>
+          <select id="province" onchange="recalculate()">
+            <option value="AB">🏔️ Alberta — GST only (5%)</option>
+            <option value="BC">🌲 British Columbia — GST 5% + PST 7%</option>
+            <option value="MB">🌾 Manitoba — GST 5% + RST 7%</option>
+            <option value="NB">🦞 New Brunswick — HST 15%</option>
+            <option value="NL">🪨 Newfoundland &amp; Labrador — HST 15%</option>
+            <option value="NS">🎣 Nova Scotia — HST 15%</option>
+            <option value="NT">❄️ Northwest Territories — GST 5%</option>
+            <option value="NU">🐻‍❄️ Nunavut — GST 5%</option>
+            <option value="ON" selected>🏙️ Ontario — HST 13%</option>
+            <option value="PE">🥔 Prince Edward Island — HST 15%</option>
+            <option value="QC">⚜️ Quebec — GST 5% + QST 9.975%</option>
+            <option value="SK">🌻 Saskatchewan — GST 5% + PST 6%</option>
+            <option value="YT">🐺 Yukon — GST 5%</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="usdRate">USD → CAD Exchange Rate</label>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <input type="number" id="usdRate" value="1.44" min="1.00" max="2.00" step="0.01" oninput="recalculate()" style="flex:1" />
+            <button class="btn-rate-refresh" id="rateRefreshBtn" onclick="fetchLiveRate()" title="Fetch today's live rate">↻</button>
+          </div>
+          <span class="hint" id="rateHint">Fetching live rate…</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 3: Add Items -->
+  <div class="card">
+    <div class="card-header">
+      <span class="step-badge">3</span>
+      <h2 class="card-header-title">Add Items You Purchased in the US</h2>
+      <span class="card-header-icon">🛍️</span>
+    </div>
+    <div class="card-body">
+      <div class="add-item-panel">
+        <div class="add-item-grid">
+          <div class="form-group">
+            <label>Item Description</label>
+            <input type="text" id="itemDesc" placeholder="e.g. Nike sneakers" />
+          </div>
+          <div class="form-group">
+            <label>Category</label>
+            <select id="itemCategory" onchange="onCategoryChange()">
+              <option value="electronics">📱 Electronics &amp; Computers (0%)</option>
+              <option value="books">📚 Books, Magazines &amp; Maps (0%)</option>
+              <option value="toys">🧸 Toys &amp; Games (0%)</option>
+              <option value="sporting">⚽ Sporting Goods &amp; Equipment (0%)</option>
+              <option value="childrenClothing">👶 Children's Clothing (0%)</option>
+              <option value="clothing">👗 Adult Clothing &amp; Apparel (18%)</option>
+              <option value="footwear">👟 Footwear / Shoes (20%)</option>
+              <option value="jewelry">💎 Jewelry &amp; Watches (6.5%)</option>
+              <option value="cosmetics">💄 Cosmetics &amp; Personal Care (6.5%)</option>
+              <option value="furniture">🛋️ Furniture &amp; Home Decor (9.5%)</option>
+              <option value="food">🛒 Food &amp; Groceries (avg 5%)</option>
+              <option value="tools">🔧 Tools &amp; Hardware (6%)</option>
+              <option value="supplements">💊 Vitamins &amp; Supplements (0%)</option>
+              <option value="luggage">🧳 Luggage &amp; Bags (16%)</option>
+              <option value="alcohol">🍷 Alcohol / Beer / Wine (special)</option>
+              <option value="tobacco">🚬 Tobacco Products (special)</option>
+              <option value="other">📦 Other / General (6.5%)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Price (USD $)</label>
+            <input type="number" id="itemPrice" placeholder="0.00" min="0" step="0.01" />
+          </div>
+          <div class="form-group">
+            <label>Quantity</label>
+            <input type="number" id="itemQty" value="1" min="1" step="1" />
+          </div>
+          <div class="form-group btn-add">
+            <label>&nbsp;</label>
+            <button class="btn btn-primary" onclick="addItem()">＋ Add</button>
+          </div>
+        </div>
+
+        <!-- Alcohol/Tobacco notice -->
+        <div class="special-notice" id="alcoholTobaccoNote" style="display:none">
+          <div class="sn-title">⚠ Special Limits Apply</div>
+          <div id="alcoholTobaccoText"></div>
+        </div>
+      </div>
+
+      <!-- Items list -->
+      <div class="table-wrap">
+        <table class="items-table" id="itemsTable">
+          <thead>
+            <tr>
+              <th>Description</th>
+              <th>Category</th>
+              <th>Qty</th>
+              <th>Price (USD)</th>
+              <th>Price (CAD)</th>
+              <th>Duty Rate</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="itemsBody">
+            <tr id="emptyRow">
+              <td colspan="7">
+                <div class="empty-state">
+                  <div class="es-icon">🛍️</div>
+                  <p>No items added yet.<br>Use the form above to add items you purchased in the US.</p>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 4: Results -->
+  <div class="card" id="resultsCard">
+    <div class="card-header">
+      <span class="step-badge">4</span>
+      <h2 class="card-header-title">Customs Duty &amp; Tax Estimate</h2>
+      <span class="card-header-icon">🧮</span>
+    </div>
+    <div class="card-body">
+      <div id="resultsContent">
+        <div class="empty-state">
+          <div class="es-icon">🧮</div>
+          <p>Add items above to see your estimated duty and taxes.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<footer>
+  <strong>Estimates only — not legal or customs advice.</strong>
+  Always declare all goods truthfully to CBSA.
+  <span class="sep">|</span>
+  <a href="https://www.cbsa-asfc.gc.ca/travel-voyage/itr-rji-eng.html" target="_blank">Official CBSA guidance</a>
+  <span class="sep">|</span>
+  <a href="#" onclick="reopenTerms(); return false;">Terms of Use &amp; Disclaimer</a>
+  <span class="sep">|</span>
+  Governed by the <em>Customs Act</em> R.S.C. 1985, c. 1 (2nd Supp.) &amp; <em>Customs Tariff</em> S.C. 1997, c. 36.
+</footer>
+
+<script>
+// ─── DATA ─────────────────────────────────────────────────────────────────────
+
+const CATEGORIES = {
+  electronics:      { label: 'Electronics & Computers',       rate: 0.00 },
+  books:            { label: 'Books, Magazines & Maps',       rate: 0.00 },
+  toys:             { label: 'Toys & Games',                  rate: 0.00 },
+  sporting:         { label: 'Sporting Goods',                rate: 0.00 },
+  childrenClothing: { label: "Children's Clothing",           rate: 0.00 },
+  supplements:      { label: 'Vitamins & Supplements',        rate: 0.00 },
+  clothing:         { label: 'Adult Clothing & Apparel',      rate: 0.18 },
+  footwear:         { label: 'Footwear / Shoes',              rate: 0.20 },
+  jewelry:          { label: 'Jewelry & Watches',             rate: 0.065 },
+  cosmetics:        { label: 'Cosmetics & Personal Care',     rate: 0.065 },
+  furniture:        { label: 'Furniture & Home Decor',        rate: 0.095 },
+  food:             { label: 'Food & Groceries',              rate: 0.05 },
+  tools:            { label: 'Tools & Hardware',              rate: 0.06 },
+  luggage:          { label: 'Luggage & Bags',                rate: 0.16 },
+  alcohol:          { label: 'Alcohol / Beer / Wine',         rate: null, special: true },
+  tobacco:          { label: 'Tobacco Products',              rate: null, special: true },
+  other:            { label: 'Other / General',               rate: 0.065 },
+};
+
+const PROVINCES = {
+  AB: { name: 'Alberta',                    gst: 0.05,  pst: 0.00,     hst: false },
+  BC: { name: 'British Columbia',           gst: 0.05,  pst: 0.07,     hst: false },
+  MB: { name: 'Manitoba',                   gst: 0.05,  pst: 0.07,     hst: false },
+  NB: { name: 'New Brunswick',             gst: 0.00,  pst: 0.00,     hst: true, hstRate: 0.15 },
+  NL: { name: 'Newfoundland & Labrador',   gst: 0.00,  pst: 0.00,     hst: true, hstRate: 0.15 },
+  NS: { name: 'Nova Scotia',               gst: 0.00,  pst: 0.00,     hst: true, hstRate: 0.15 },
+  NT: { name: 'Northwest Territories',     gst: 0.05,  pst: 0.00,     hst: false },
+  NU: { name: 'Nunavut',                   gst: 0.05,  pst: 0.00,     hst: false },
+  ON: { name: 'Ontario',                   gst: 0.00,  pst: 0.00,     hst: true, hstRate: 0.13 },
+  PE: { name: 'Prince Edward Island',      gst: 0.00,  pst: 0.00,     hst: true, hstRate: 0.15 },
+  QC: { name: 'Quebec',                    gst: 0.05,  pst: 0.09975,  hst: false, qst: true },
+  SK: { name: 'Saskatchewan',              gst: 0.05,  pst: 0.06,     hst: false },
+  YT: { name: 'Yukon',                     gst: 0.05,  pst: 0.00,     hst: false },
+};
+
+const EXEMPTIONS = {
+  0:   { cad: 0,   alcohol: false, tobacco: false, label: 'No exemption' },
+  24:  { cad: 200, alcohol: false, tobacco: false, label: '$200 CAD exemption' },
+  48:  { cad: 800, alcohol: true,  tobacco: true,  label: '$800 CAD exemption' },
+  168: { cad: 800, alcohol: true,  tobacco: true,  label: '$800 CAD exemption' },
+};
+
+// ─── STATE ────────────────────────────────────────────────────────────────────
+
+let selectedDurationHours = 24;
+let items = [];
+let nextId = 1;
+
+// ─── UI HELPERS ───────────────────────────────────────────────────────────────
+
+function selectDuration(el) {
+  document.querySelectorAll('.duration-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  el.querySelector('input[type=radio]').checked = true;
+  selectedDurationHours = parseInt(el.dataset.hours);
+  recalculate();
+}
+
+function onCategoryChange() {
+  const cat = document.getElementById('itemCategory').value;
+  const noteEl = document.getElementById('alcoholTobaccoNote');
+  const textEl = document.getElementById('alcoholTobaccoText');
+  if (cat === 'alcohol') {
+    noteEl.style.display = 'block';
+    textEl.innerHTML = `
+      <p>If away <strong>48+ hours</strong>, you may bring duty-free:</p>
+      <ul style="margin-left:16px;margin-top:4px;line-height:1.8">
+        <li>1.14 L of spirits (&gt;22% ABV), <em>or</em></li>
+        <li>1.5 L of wine / coolers, <em>or</em></li>
+        <li>8.5 L of beer (~24 cans/bottles)</li>
+      </ul>
+      <p style="margin-top:6px">Quantities above these limits are subject to customs + excise duty.</p>
+      <p style="margin-top:4px;font-weight:600">Enter the <em>total USD value</em> of all alcohol purchased.</p>
+    `;
+  } else if (cat === 'tobacco') {
+    noteEl.style.display = 'block';
+    textEl.innerHTML = `
+      <p>If away <strong>48+ hours</strong>, you may bring duty-free:</p>
+      <ul style="margin-left:16px;margin-top:4px;line-height:1.8">
+        <li>200 cigarettes (1 carton)</li>
+        <li>50 cigars</li>
+        <li>200 g of manufactured tobacco</li>
+        <li>200 tobacco sticks</li>
+      </ul>
+      <p style="margin-top:6px">Must be 18+ (19+ in some provinces). Extra quantities attract duty.</p>
+      <p style="margin-top:4px;font-weight:600">Enter the <em>total USD value</em> of tobacco purchased.</p>
+    `;
+  } else {
+    noteEl.style.display = 'none';
+  }
+}
+
+function fmt(v) {
+  return '$' + v.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+function pct(r) { return (r * 100).toFixed(1) + '%'; }
+
+// ─── ADD ITEM ─────────────────────────────────────────────────────────────────
+
+function addItem() {
+  const desc     = document.getElementById('itemDesc').value.trim();
+  const category = document.getElementById('itemCategory').value;
+  const price    = parseFloat(document.getElementById('itemPrice').value);
+  const qty      = parseInt(document.getElementById('itemQty').value) || 1;
+
+  if (!desc) { alert('Please enter an item description.'); return; }
+  if (isNaN(price) || price < 0) { alert('Please enter a valid price.'); return; }
+
+  items.push({ id: nextId++, desc, category, priceUSD: price, qty });
+  document.getElementById('itemDesc').value = '';
+  document.getElementById('itemPrice').value = '';
+  document.getElementById('itemQty').value = '1';
+  renderItems();
+  recalculate();
+}
+
+function removeItem(id) {
+  items = items.filter(i => i.id !== id);
+  renderItems();
+  recalculate();
+}
+
+function renderItems() {
+  const tbody = document.getElementById('itemsBody');
+  const rate = parseFloat(document.getElementById('usdRate').value) || 1.44;
+
+  if (items.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="7">
+      <div class="empty-state">
+        <div class="es-icon">🛍️</div>
+        <p>No items added yet.<br>Use the form above to add items you purchased in the US.</p>
+      </div></td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = items.map(item => {
+    const cat = CATEGORIES[item.category];
+    const priceCad = item.priceUSD * item.qty * rate;
+    const dutyRate = cat.special ? null : cat.rate;
+    let chipHtml;
+    if (cat.special) {
+      chipHtml = '<span class="chip chip-amber">Special</span>';
+    } else if (dutyRate === 0) {
+      chipHtml = `<span class="chip chip-green">0%</span>`;
+    } else {
+      chipHtml = `<span class="chip chip-blue">${pct(dutyRate)}</span>`;
+    }
+    return `<tr>
+      <td><span class="item-desc">${escHtml(item.desc)}</span></td>
+      <td><span class="item-cat">${cat.label}</span></td>
+      <td>${item.qty}</td>
+      <td>$${(item.priceUSD * item.qty).toFixed(2)}</td>
+      <td style="font-weight:600">${fmt(priceCad)}</td>
+      <td>${chipHtml}</td>
+      <td><button class="btn btn-danger" onclick="removeItem(${item.id})" title="Remove item">✕</button></td>
+    </tr>`;
+  }).join('');
+}
+
+function escHtml(s) {
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ─── CALCULATE ────────────────────────────────────────────────────────────────
+
+function recalculate() {
+  const rate      = parseFloat(document.getElementById('usdRate').value) || 1.44;
+  const provCode  = document.getElementById('province').value;
+  const prov      = PROVINCES[provCode];
+  const exemption = EXEMPTIONS[selectedDurationHours];
+
+  let taxRate = prov.hst ? prov.hstRate : (prov.gst + prov.pst);
+
+  const regularItems = items.filter(i => i.category !== 'alcohol' && i.category !== 'tobacco');
+  const alcoholItems = items.filter(i => i.category === 'alcohol');
+  const tobaccoItems = items.filter(i => i.category === 'tobacco');
+
+  let regularTotalCAD = regularItems.reduce((s, i) => s + i.priceUSD * i.qty * rate, 0);
+  let alcoholTotalCAD = alcoholItems.reduce((s, i) => s + i.priceUSD * i.qty * rate, 0);
+  let tobaccoTotalCAD = tobaccoItems.reduce((s, i) => s + i.priceUSD * i.qty * rate, 0);
+  let grandTotalCAD   = regularTotalCAD + alcoholTotalCAD + tobaccoTotalCAD;
+
+  const exemptCAD = exemption.cad;
+  let taxableRegularCAD = Math.max(0, regularTotalCAD - exemptCAD);
+  let exemptionUsed = Math.min(regularTotalCAD, exemptCAD);
+
+  let regularDuty = 0;
+  if (taxableRegularCAD > 0 && regularTotalCAD > 0) {
+    const taxableFraction = taxableRegularCAD / regularTotalCAD;
+    regularItems.forEach(item => {
+      const itemCAD = item.priceUSD * item.qty * rate;
+      regularDuty += itemCAD * taxableFraction * CATEGORIES[item.category].rate;
+    });
+  }
+
+  let alcoholDuty = 0, alcoholTaxableCAD = 0, alcoholNote = '';
+  if (alcoholTotalCAD > 0) {
+    if (!exemption.alcohol) {
+      alcoholDuty = alcoholTotalCAD * 0.35;
+      alcoholTaxableCAD = alcoholTotalCAD;
+      alcoholNote = 'Full duty applies (less than 48 hours away)';
+    } else {
+      const over = Math.max(0, alcoholTotalCAD - 50);
+      alcoholDuty = over * 0.35;
+      alcoholTaxableCAD = over;
+      alcoholNote = over > 0
+        ? `Over-allowance portion (~${fmt(over)}) taxed at ~35%`
+        : 'Within personal allowance — duty-free portion';
+    }
+  }
+
+  let tobaccoDuty = 0, tobaccoTaxableCAD = 0, tobaccoNote = '';
+  if (tobaccoTotalCAD > 0) {
+    if (!exemption.tobacco) {
+      tobaccoDuty = tobaccoTotalCAD * 0.40;
+      tobaccoTaxableCAD = tobaccoTotalCAD;
+      tobaccoNote = 'Full duty applies (less than 48 hours away)';
+    } else {
+      const over = Math.max(0, tobaccoTotalCAD - 30);
+      tobaccoDuty = over * 0.40;
+      tobaccoTaxableCAD = over;
+      tobaccoNote = over > 0
+        ? `Over-allowance portion (~${fmt(over)}) taxed at ~40%`
+        : 'Within personal allowance — duty-free portion';
+    }
+  }
+
+  const totalDuty = regularDuty + alcoholDuty + tobaccoDuty;
+  const taxBase   = taxableRegularCAD + alcoholTaxableCAD + tobaccoTaxableCAD + totalDuty;
+  const totalTax  = taxBase * taxRate;
+  const totalOwed = totalDuty + totalTax;
+
+  const resultsEl = document.getElementById('resultsContent');
+
+  if (items.length === 0) {
+    resultsEl.innerHTML = `<div class="empty-state"><div class="es-icon">🧮</div><p>Add items above to see your estimated duty and taxes.</p></div>`;
+    return;
+  }
+
+  // Tax label
+  let taxLabel = prov.hst ? `HST (${pct(prov.hstRate)})`
+    : provCode === 'QC' ? 'GST (5%) + QST (9.975%)'
+    : prov.pst > 0 ? `GST (5%) + PST (${pct(prov.pst)})`
+    : 'GST (5%)';
+
+  // Exemption bar
+  const barPct = exemptCAD > 0
+    ? Math.min(100, (grandTotalCAD / exemptCAD) * 100).toFixed(1)
+    : 100;
+  const barClass = barPct < 70 ? 'bar-green' : barPct < 100 ? 'bar-amber' : 'bar-red';
+
+  // Hero status
+  const heroClass = totalOwed === 0 ? 'results-hero no-duty' : 'results-hero';
+  const heroLabel = totalOwed === 0 ? 'All Clear — No Duty Owed' : 'Estimated Amount to Pay';
+  const heroIcon  = totalOwed === 0 ? '✅' : '💳';
+
+  // Status message
+  let statusMsg = '';
+  if (totalOwed === 0) {
+    statusMsg = `<div class="alert alert-green"><span class="al-icon">✅</span>
+      <div><strong>No duty owed!</strong> Your total purchases (${fmt(grandTotalCAD)} CAD) fall within your ${fmt(exemptCAD)} CAD personal exemption.</div>
+    </div>`;
+  } else if (exemptCAD > 0 && grandTotalCAD <= exemptCAD * 1.2) {
+    statusMsg = `<div class="alert alert-amber"><span class="al-icon">⚠️</span>
+      <div><strong>Just over your exemption.</strong> A small amount of duty and tax applies.</div>
+    </div>`;
+  } else {
+    statusMsg = `<div class="alert alert-red"><span class="al-icon">💳</span>
+      <div><strong>Duty is owed.</strong> Have approximately ${fmt(totalOwed)} CAD ready at the border.</div>
+    </div>`;
+  }
+
+  resultsEl.innerHTML = `
+    <div class="${heroClass}">
+      <div class="rh-label">${heroIcon} ${heroLabel}</div>
+      <div class="rh-amount">${fmt(totalOwed)}</div>
+      <div class="rh-sub">Duty + ${taxLabel} on ${fmt(grandTotalCAD)} CAD of purchases</div>
+    </div>
+
+    <div class="summary-grid">
+      <div class="summary-box">
+        <div class="sb-label">Total Purchases</div>
+        <div class="sb-value">${fmt(grandTotalCAD)}</div>
+        <div class="sb-sub">${fmt(grandTotalCAD / rate)} USD @ ${rate}</div>
+      </div>
+      <div class="summary-box">
+        <div class="sb-label">Personal Exemption</div>
+        <div class="sb-value">${fmt(exemptCAD)}</div>
+        <div class="sb-sub">${exemption.label}</div>
+      </div>
+      <div class="summary-box">
+        <div class="sb-label">Customs Duty</div>
+        <div class="sb-value">${fmt(totalDuty)}</div>
+        <div class="sb-sub">On ${fmt(taxableRegularCAD + alcoholTaxableCAD + tobaccoTaxableCAD)} CAD taxable</div>
+      </div>
+    </div>
+
+    ${exemptCAD > 0 ? `
+    <div class="exemption-bar-wrap">
+      <div class="exemption-bar-label">
+        <span>Exemption used: <strong>${fmt(Math.min(grandTotalCAD, exemptCAD))} of ${fmt(exemptCAD)}</strong></span>
+        <span>${barPct}%</span>
+      </div>
+      <div class="exemption-bar-track">
+        <div class="exemption-bar-fill ${barClass}" style="width:${barPct}%"></div>
+      </div>
+    </div>` : ''}
+
+    ${statusMsg}
+
+    <div class="breakdown-section" style="margin-top:20px">
+      <div class="bs-title">Full Breakdown</div>
+      <table class="breakdown-table">
+        <tbody>
+          <tr><td>Total purchases (CAD)</td><td>${fmt(grandTotalCAD)}</td></tr>
+          <tr class="bd-credit"><td class="bd-muted">Personal exemption deducted</td><td>− ${fmt(exemptionUsed)}</td></tr>
+          <tr><td class="bd-muted">Taxable regular goods</td><td>${fmt(taxableRegularCAD)}</td></tr>
+          ${alcoholTotalCAD > 0 ? `<tr><td class="bd-muted">Alcohol taxable value</td><td>${fmt(alcoholTaxableCAD)}</td></tr>` : ''}
+          ${tobaccoTotalCAD > 0 ? `<tr><td class="bd-muted">Tobacco taxable value</td><td>${fmt(tobaccoTaxableCAD)}</td></tr>` : ''}
+          <tr><td>Customs duty</td><td>${fmt(totalDuty)}</td></tr>
+          <tr><td>${taxLabel}</td><td>${fmt(totalTax)}</td></tr>
+        </tbody>
+        <tfoot>
+          <tr class="bd-total">
+            <td>Total to declare &amp; pay</td>
+            <td>${fmt(totalOwed)}</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    ${alcoholNote ? `<div class="alert alert-amber" style="margin-top:12px"><span class="al-icon">🍷</span><div><strong>Alcohol:</strong> ${alcoholNote}</div></div>` : ''}
+    ${tobaccoNote ? `<div class="alert alert-amber" style="margin-top:8px"><span class="al-icon">🚬</span><div><strong>Tobacco:</strong> ${tobaccoNote}</div></div>` : ''}
+
+    <div class="alert alert-blue" style="margin-top:12px">
+      <span class="al-icon">ℹ️</span>
+      <div>
+        <strong>Always declare everything.</strong> Failure to declare goods can result in seizure and fines of up to $1,000.
+        CBSA officers may inspect your items and adjust the duty. Keep all receipts handy.
+      </div>
+    </div>
+  `;
+}
+
+// ─── TERMS & CONDITIONS ───────────────────────────────────────────────────────
+
+function onTcCheckbox() {
+  const checked = document.getElementById('tcCheckbox').checked;
+  const btn = document.getElementById('tcAcceptBtn');
+  btn.disabled = !checked;
+  btn.classList.toggle('ready', checked);
+}
+
+function acceptTerms() {
+  if (!document.getElementById('tcCheckbox').checked) return;
+  document.getElementById('tcOverlay').classList.add('hidden');
+  try { sessionStorage.setItem('tc_accepted', '1'); } catch(e) {}
+}
+
+function reopenTerms() {
+  document.getElementById('tcCheckbox').checked = false;
+  const btn = document.getElementById('tcAcceptBtn');
+  btn.disabled = true;
+  btn.classList.remove('ready');
+  document.getElementById('tcOverlay').classList.remove('hidden');
+}
+
+// ─── LIVE EXCHANGE RATE ───────────────────────────────────────────────────────
+
+async function fetchLiveRate() {
+  const btn  = document.getElementById('rateRefreshBtn');
+  const hint = document.getElementById('rateHint');
+  btn.classList.add('spinning');
+  btn.disabled = true;
+  hint.textContent = 'Fetching live rate…';
+  try {
+    const res  = await fetch('https://api.frankfurter.app/latest?from=USD&to=CAD');
+    if (!res.ok) throw new Error('Network error');
+    const data = await res.json();
+    const rate = data.rates.CAD;
+    document.getElementById('usdRate').value = rate.toFixed(4);
+    hint.textContent = `Live rate: 1 USD = ${rate.toFixed(4)} CAD — as of ${data.date} (via Frankfurter / ECB)`;
+    recalculate();
+  } catch (e) {
+    hint.textContent = 'Could not fetch live rate. Enter it manually or try again.';
+  } finally {
+    btn.classList.remove('spinning');
+    btn.disabled = false;
+  }
+}
+
+// ─── INIT ─────────────────────────────────────────────────────────────────────
+
+try {
+  if (sessionStorage.getItem('tc_accepted') === '1') {
+    document.getElementById('tcOverlay').classList.add('hidden');
+  }
+} catch(e) {}
+
+recalculate();
+fetchLiveRate();
+</script>
+</body>
+</html>
