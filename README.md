@@ -178,4 +178,4 @@ Pull requests are welcome. If duty rates or exemption thresholds change due to n
 
 ## License
 
-MIT — free to use, modify, and distribute, Attribution appreciated but not required.
+MIT — free to use, modify, and distribute. Attribution appreciated but not required.

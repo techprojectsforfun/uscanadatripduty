@@ -113,6 +113,10 @@
   }
   </script>
 
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8662884675765152"
+     crossorigin="anonymous"></script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -365,7 +369,7 @@
       padding: 10px 14px;
       border: 1.5px solid var(--gray-200);
       border-radius: var(--radius-sm);
-      font-size: 0.9rem;
+      font-size: 1rem;
       font-family: inherit;
       color: var(--gray-800);
       background: white;
@@ -860,6 +864,53 @@
       background: linear-gradient(135deg, var(--red-mid), var(--red-dark));
       box-shadow: 0 4px 16px rgba(200,16,46,0.45);
       transform: translateY(-1px);
+    }
+
+    /* ── SMALL PHONE BREAKPOINT (≤ 480px) ───────────────────────────────────── */
+    @media (max-width: 480px) {
+      .header-inner {
+        padding: 20px 16px 16px;
+        gap: 12px;
+      }
+      .header-icon { font-size: 2rem; }
+      .header-text h1 { font-size: 1.4rem; }
+      .header-text p { font-size: 0.82rem; }
+
+      .container { padding: 16px 12px 8px; gap: 14px; }
+
+      .card-header { padding: 14px 16px; }
+      .card-body   { padding: 16px; }
+
+      /* add-item form: stack to 1 column on small phones */
+      .add-item-grid {
+        grid-template-columns: 1fr;
+      }
+      .add-item-grid .btn-add { grid-column: 1; }
+
+      /* summary boxes: 1 column on small phones */
+      .summary-grid { grid-template-columns: 1fr; }
+
+      /* results hero: smaller amount, tighter padding */
+      .results-hero { padding: 16px; }
+      .results-hero .rh-amount { font-size: 2.2rem; }
+
+      /* breakdown table: tighter cells */
+      .breakdown-table td { padding: 8px 12px; font-size: 0.82rem; }
+      .breakdown-section .bs-title { padding: 8px 12px; }
+
+      /* modal: reduce horizontal padding so text isn't squashed */
+      .modal-overlay { padding: 8px; }
+      .modal-header  { padding: 16px; }
+      .modal-body    { padding: 16px; }
+      .modal-footer  { padding: 14px 16px; }
+      .btn-accept    { align-self: stretch; }
+
+      /* items table: tighter cells */
+      .items-table th,
+      .items-table td { padding: 9px 10px; font-size: 0.8rem; }
+
+      /* buttons: full-width primary action in add panel */
+      .add-item-panel .btn-primary { width: 100%; }
     }
   </style>
 </head>
